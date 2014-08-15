@@ -21,9 +21,11 @@ public class User implements Serializable {
     /***********************************************
     |    I N S T A N C E   V A R I A B L E S    |
     ***********************************************/
-    private int id;
+    private int userId;
     private String firstName;
     private String lastName;
+    private String sex;
+    private int age;
 
     /***********************************************
     |         C O N S T R U C T O R S           |
@@ -31,12 +33,28 @@ public class User implements Serializable {
     /***********************************************
     |  A C C E S S O R S / M O D I F I E R S    |
      ***********************************************/
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getFirstName() {

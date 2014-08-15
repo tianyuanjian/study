@@ -58,7 +58,7 @@ and open the template in the editor.
         </property>
     </bean>
     
-    <mvc:view-controller path="/" view-name="home" />
+    <mvc:view-controller path="/user/add.xhtml" view-name="user/add" />
     
     <mvc:resources mapping="/resources/**" location="/public-resources/" />
     

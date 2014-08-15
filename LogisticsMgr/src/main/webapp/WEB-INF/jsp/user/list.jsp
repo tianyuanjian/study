@@ -6,22 +6,40 @@
 
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<form:form action="/user/add.xhtml" commandName="user">
-    <table>
-        <tr>
-            <td>First Name:</td>
-            <td><form:input path="firstName"/></td>
-        </tr>
-        <tr>
-            <td>Last Name:</td>
-            <td><form:input path="lastName"/></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="submit" value="Save Changes"/>
-            </td>
-        </tr>
-    </table>
-</form:form>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>用户列表</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th><label for=e1>ID</label></th>
+                    <th><label for=e2>FirstName</label></th>
+                    <th><label for=e2>LastName</label></th>
+                    <th><label for=e2>Sex</label></th>
+                    <th><label for=e2>Age</label></th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <c:forEach items="${userList}" var="user">
+                    <tr>
+                        <td><a href="queryById/${user.userId}.xhtml">${user.userId}</a></td>
+                        <td><label>${user.firstName}</label></td>
+                        <td><label>${user.lastName}</label></td>
+                        <td><label>${user.sex}</label></td>
+                        <td><label>${user.age}</label></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+        <br/>
+        
+        <a href="add.xhtml">添加用户</a>
+    </body>
+</html>
